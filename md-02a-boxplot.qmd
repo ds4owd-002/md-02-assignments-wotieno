@@ -1,6 +1,6 @@
 ---
 title: "Make a Plot"
-author: "Your Name Here"
+author: "Wycliffe"
 format:
   html:
     embed-resources: true
@@ -10,6 +10,11 @@ execute:
 editor_options:
   chunk_output_type: console
 ---
+
+```{r}
+library(usethis)
+use_git_config(user.name = "wotieno", user.email = "wycliffeawino246@gmail.com")
+```
 
 ## Task 1: Import
 
@@ -40,7 +45,7 @@ gapminder |>
 
 4.  Write in your own words what you think this code does:
 
-*Your answer here:*
+*Your answer here: The code chunk above reads the dataframe gapminder and transforms it by filtering for instances where the year is 2007.*
 
 5.  Now run the code chunk below that assigns the result to an object.
 
@@ -53,7 +58,7 @@ gapminder_2007 <- gapminder |>
 
 7.  Click on `gapminder_2007` in the Environment tab to view the data. What do you notice about this dataset compared to the original `gapminder` dataset?
 
-*Your answer here:*
+*Your answer here: The code chunk above reads the dataframe gapminder, transforms it for cases where the year is 2007 and stores the new dataset in an object called gapminder_2007.*
 
 ## Task 3: Summarize data for life expectancy by continent
 
@@ -76,7 +81,7 @@ gapminder_2007 |>
 
 4.  Write in your own words what you think this code does:
 
-*Your answer here:*
+*Your answer here: This code chunk takes the object gapminder_2007 (which is a dataframe) and transform it further by grouping observations by the continent. Next, it summarises the observations by creating a new variable called 'count', which is the number of countries represented in the corresponding continent and returns the median life expectancy in that group.*
 
 5.  Now run the code chunk below that assigns the result to an object.
 
@@ -93,7 +98,7 @@ gapminder_summary_2007 <- gapminder_2007 |>
 
 7.  Look at the `gapminder_summary_2007` object in the Environment tab. How many rows and columns does it have? Why is this different from `gapminder_2007`?
 
-*Your answer here:*
+*Your answer here: `gapminder_summary_2007` has 5 rows and 3 columns. It shows the number of continents in the dataset (=5), so we only have that number of groups. The 3 columns represents the name of the grouping variable –continent– and two others that we specify in our summary –lifeExp & count. `gapminder_2007` on the other hand is the original dataframe filtered for the year 2007.*
 
 ## Task 4: Summarize data for life expectancy by continent and year
 
@@ -113,7 +118,7 @@ gapminder |>
 
 4.  Write in your own words what you think this code does:
 
-*Your answer here:*
+*Your answer here: This code chunk takes the original dataframe gapminder and transform it through the pipe operator by grouping by continent and years then summarizing the by the median values for life expectancy in that continent in that year.*
 
 5.  Now run the code chunk below that assigns the result to an object.\$
 
@@ -127,7 +132,7 @@ gapminder_summary_continent_year <- gapminder |>
 
 7.  Compare this result with Task 3. What's different about grouping by two variables instead of one? How does this affect the output?
 
-*Your answer here:*
+*Your answer here: First, we do not create the variable count by which we were summarizing the results. Next, for each continent, it returns the corresponding year and summarizes the results by the median life expectancy in that year.*
 
 ## Task 5: Create your first plot
 
@@ -146,7 +151,7 @@ ggplot(data = gapminder_2007,
 
 3.  Write in your own words what this plot shows:
 
-*Your answer here:*
+*Your answer here: This is a boxplot showing the distribution of life expectancy by continent. Africa has the widest distribution and lowest mean life expectancy with mean \~55.5 years, followed by Asia with a mean of \~73.0 years. Americas is third , followed by Europe. Oceania has the lowest distribution and the highest mean life expectancy \~81.0 years.*
 
 ## Task 6: Data communication
 
